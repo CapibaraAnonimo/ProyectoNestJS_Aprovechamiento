@@ -40,18 +40,8 @@ let MonumentoService = class MonumentoService {
     findOne(id) {
         return this.monumentoRepository.findOneBy({ id: id });
     }
-    update(id, createMonumentoDto) {
-        let nuevo = new monumento_entity_1.Monumento();
-        nuevo.id = createMonumentoDto.id;
-        nuevo.code = createMonumentoDto.code;
-        nuevo.nombrePais = createMonumentoDto.nombrePais;
-        nuevo.nombreCiudad = createMonumentoDto.nombreCiudad;
-        nuevo.lon = createMonumentoDto.lon;
-        nuevo.lat = createMonumentoDto.lat;
-        nuevo.nombre = createMonumentoDto.nombre;
-        nuevo.descripcion = createMonumentoDto.descripcion;
-        nuevo.fotoURL = createMonumentoDto.fotoURL;
-        return this.monumentoRepository.update(id, createMonumentoDto);
+    update(id, updateMonumentoDto) {
+        return this.monumentoRepository.update(id, updateMonumentoDto);
     }
     remove(id) {
         return this.monumentoRepository.delete({ id: id });
